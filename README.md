@@ -9,10 +9,10 @@
   <h4 align="center">I love finding shortcuts.</h4>
 <p>
   I believe that if you understand the fundamental pattern of one system, you already understand half of another. I used data transmission concepts to learn electricity, physical analogies to understand gravity, pressure and other phenomenons.<br> <br>
- -    <a href="https://github.com/htarek-bytes/My-notes/tree/main/Electricity/">
+ -    <a href="https://github.com/htarek-bytes/My-notes/blob/main/Electricity/Coulomb_Voltage_Current_Watts.pdf">
   A preview on how I learn electricity
  </a><br>
- -    <a href="https://github.com/htarek-bytes/My-notes/blob/main/2245_OS/OS_1.typ">
+ -    <a href="https://github.com/htarek-bytes/My-notes/blob/main/2245_OS/OS_1.pdf">
   A preview on how I learn Operating systems
 </a><br>
 
