@@ -16,7 +16,7 @@
   A preview on how I learn Operating systems
 </a><br>
 
-  <h4 align="center">Its all about the dots...</h4>
+  <h4 align="center">It's all about the dots...</h4>
   
  <p> My goal isn't just to learn a concepts. I think that stopping there is missing out on some dense, fruitful learning opportunities. The real goldmine is to find the underlying pattern so I never have to learn it again.
 </p>
