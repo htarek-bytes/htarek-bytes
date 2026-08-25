@@ -1,50 +1,84 @@
-<h1 align="center">Hello 👋, I'm Tarek</h1>
-<h3 align="center">Just a random guy obsessed with the "Why" behind every "How".</h3>
+<h1 align="center">Tarek Hireche</h1>
 
-<p width="80%">
-  I genuinely enjoy viewing the world as a massive, interconnected system waiting to be deconstructed.<br>
-  I treat knowledge like a graph, kind of like a spider web. My goal is to build this spider web of understanding where every new concept is connected to a foundational principle I already know.
-  It makes life challenging and very fun.
-</p>
-  <h4 align="center">I love finding shortcuts.</h4>
-<p>
-  I believe that if you understand the fundamental pattern of one system, you already understand half of another. I used data transmission concepts to learn electricity, physical analogies to understand gravity, pressure and other phenomenons.<br> <br>
- -    <a href="https://github.com/htarek-bytes/My-notes/blob/main/Electricity/Coulomb_Voltage_Current_Watts.pdf">
-  A preview on how I learn electricity
- </a><br>
- -    <a href="https://github.com/htarek-bytes/My-notes/blob/main/2245_OS/OS_1.pdf">
-  A preview on how I learn Operating systems
-</a><br>
-
-  <h4 align="center">It's all about the dots...</h4>
-  
- <p> My goal isn't just to learn a concepts. I think that stopping there is missing out on some dense, fruitful learning opportunities. The real goldmine is to find the underlying pattern so I never have to learn it again.
+<p align="center">
+  Computer Science student at Université de Montréal · Montréal, QC<br>
+  I work on low-level and systems software: C, C++, Linux, and embedded.<br>
+  <b>Graduating December 2026. Open to full-time software engineering roles.</b>
 </p>
 
-<p>
-  <b>Currently exploring:</b> The intersection of Embedded Systems, Electronics, and Low-Level Logic.
+<p align="center">
+  <a href="https://htarek.systems">Portfolio</a> ·
+  <a href="https://htarek.systems/resume_htarek.pdf">Résumé</a> ·
+  <a href="mailto:tarik.hireche@umontreal.ca">tarik.hireche@umontreal.ca</a>
 </p>
 
 ---
-<h3 align="center">Languages and Tools I use:</h3><br>
-<p align="center"> </a> <a href="https://www.cprogramming.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="c" width="40" height="40"/> </a> <a href="https://www.w3schools.com/cpp/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="cplusplus" width="40" height="40"/> </a> <a href="https://www.docker.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="docker" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://www.linux.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux" width="40" height="40"/> </a> <a href="https://www.postgresql.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" width="40" height="40"/> </a> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </p> <br>
 
-- 🔭 I'm currently working on: [The environmental Black Box: Embedded flight recorder](https://github.com/htarek-bytes/ESP32-S3-N8R8/) *(baseline committed, hardware incoming)*
-  
-- 🌱 I'm currently learning: **ESP32, STM32, Electronics, RTOS**
-  
-- 🧠 Recent rabbit holes:
-  - **1:1 correspondences in the wild:** Using data transmission (packets, bandwidth, latency) to reverse-engineer electricity.
-    
-  - **RTOS scheduling:** Treating task prioritization like CPU cache eviction policies
-    
-- 👨‍💻 Most of my projects are available at: [htarek.systems](https://htarek.systems)
-  
-- 💬 Talk to me about random stuff: **Calisthenics, RTOS, Electromagnetism, Memory & CPU Architecture**
-  
-- 📫 How to reach me: **tarik.hireche@umontreal.ca**
-  
-- 📄 Know about my experiences: [https://htarek.systems/resume_htarek.pdf](https://htarek.systems/resume_htarek.pdf)
-  
-- ⚡ Facts about me: **I love calisthenics, patterns IRL, understanding the world**
+## About
 
+I like understanding the layer underneath the one I'm working in: the syscalls under a
+process supervisor, the allocator under a language runtime, the register writes under a
+sensor driver. Most of what I publish comes out of that: small, finished projects that go
+deep on one mechanism rather than wide across many.
+
+I care about the parts that make code usable by other people: tests, CI, a README that
+explains the problem before the solution, and a build that works on a machine that isn't mine.
+
+**Currently:** building an ESP32-S3 environmental data logger (bare-metal I2C driver for the
+BME280, FreeRTOS task decomposition, ring buffer over flash) and going deeper on RTOS
+scheduling and electronics.
+
+## Projects
+
+### [sentinel](https://github.com/htarek-bytes/sentinel): process supervisor for Linux containers
+`C++17` · `CMake` · `Docker` · `Prometheus` · `Grafana` · `GitHub Actions`
+
+A PID 1 init for containers, built from the syscall level up. Handles the problems `tini` and
+`dumb-init` exist to solve: forwarding signals to the child's process group, reaping orphaned
+descendants, escalating to SIGKILL after a grace period, and propagating the child's exit status
+so it composes with shell scripts and CI. Adds supervised restarts with exponential backoff and a
+Prometheus metrics endpoint. Ships as a two-stage container image with a Compose stack
+(Prometheus + Grafana, alert rules provisioned), and CI brings that whole stack up on every push.
+The build fails unless the target scrapes, the counters move, and the dashboard serves.
+
+### [zig-custom-allocators](https://github.com/htarek-bytes/zig-custom-allocators): memory allocators from scratch
+`Zig` · `std.testing`
+
+Three allocators built against Zig's `std.mem.Allocator` interface, each adding a capability the
+previous one lacks: a bump allocator, a tagged allocator with a per-block header, and a recycling
+first-fit allocator that reuses freed blocks. Each plugs into the standard vtable, so ordinary Zig
+code runs against them unmodified, and each ships its own test suite covering alignment, buffer
+exhaustion, and block reuse. The README documents an alignment bug that passed on x86-64 and
+panicked on ARM, and why aligning an offset instead of an absolute address causes it.
+
+### [hospital-directory-api](https://github.com/htarek-bytes/hospital-directory-api): hospital directory service
+`Java` · `Spring Boot` · `PostgreSQL` · `Docker Compose` · `Maven`
+
+Team project (IFT 2935). Backend service for browsing Montréal hospitals and managing patient
+registrations, with a relational schema and the full stack brought up by a single
+`docker-compose up`.
+
+## Skills
+
+- **Languages:** C, C++, Java, Python, Zig, SQL
+- **Systems:** Linux, POSIX/syscalls, concurrency & synchronisation, memory management, FreeRTOS
+- **Embedded:** ESP32-S3, ESP-IDF, STM32, I2C, bare-metal drivers
+- **Tooling:** Git, CMake, Docker & Compose, GitHub Actions, PostgreSQL, Prometheus, Grafana, Neovim
+
+## Education
+
+**B.Sc. Computer Science, Université de Montréal**
+
+Coursework in operating systems, algorithms & data structures, computer architecture, software
+engineering, databases, and artificial intelligence.
+
+I also keep my study notes public, since writing something down is how I find out whether I
+actually understand it:
+[electricity](https://github.com/htarek-bytes/My-notes/blob/main/Electricity/Coulomb_Voltage_Current_Watts.pdf) ·
+[operating systems](https://github.com/htarek-bytes/My-notes/blob/main/2245_OS/OS_1.pdf)
+
+## Contact
+
+- **Email:** tarik.hireche@umontreal.ca
+- **Portfolio:** [htarek.systems](https://htarek.systems)
+- **Résumé:** [htarek.systems/resume_htarek.pdf](https://htarek.systems/resume_htarek.pdf)
