@@ -1,9 +1,7 @@
-<h1 align="center">Tarek Hireche</h1>
+<h1 align="center">Tarik Hireche</h1>
 
 <p align="center">
-  Computer Science student at Université de Montréal · Montréal, QC<br>
-  I work on low-level and systems software: C, C++, Linux, and embedded.<br>
-  <b>Graduating December 2026. Open to full-time software engineering roles.</b>
+  Bilingual Software Developer | Java, C#, SQL, Cloud & Infrastructure<br>
 </p>
 
 <p align="center">
@@ -51,19 +49,12 @@ code runs against them unmodified, and each ships its own test suite covering al
 exhaustion, and block reuse. The README documents an alignment bug that passed on x86-64 and
 panicked on ARM, and why aligning an offset instead of an absolute address causes it.
 
-### [hospital-directory-api](https://github.com/htarek-bytes/hospital-directory-api): hospital directory service
-`Java` · `Spring Boot` · `PostgreSQL` · `Docker Compose` · `Maven`
-
-Team project (IFT 2935). Backend service for browsing Montréal hospitals and managing patient
-registrations, with a relational schema and the full stack brought up by a single
-`docker-compose up`.
 
 ## Skills
 
-- **Languages:** C, C++, Java, Python, Zig, SQL
-- **Systems:** Linux, POSIX/syscalls, concurrency & synchronisation, memory management, FreeRTOS
-- **Embedded:** ESP32-S3, ESP-IDF, STM32, I2C, bare-metal drivers
-- **Tooling:** Git, CMake, Docker & Compose, GitHub Actions, PostgreSQL, Prometheus, Grafana, Neovim
+- **Languages:**Java, C#, Python, SQL
+- **Systems:** Linux, POSIX/syscalls, concurrency & synchronisation, memory management
+- - **Tooling:** Git, CMake, Docker & Compose, GitHub Actions, PostgreSQL, Prometheus, Grafana, Neovim
 
 ## Education
 
