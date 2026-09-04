@@ -22,10 +22,6 @@ deep on one mechanism rather than wide across many.
 I care about the parts that make code usable by other people: tests, CI, a README that
 explains the problem before the solution, and a build that works on a machine that isn't mine.
 
-**Currently:** building an ESP32-S3 environmental data logger (bare-metal I2C driver for the
-BME280, FreeRTOS task decomposition, ring buffer over flash) and going deeper on RTOS
-scheduling and electronics.
-
 ## Projects
 
 ### [sentinel](https://github.com/htarek-bytes/sentinel): process supervisor for Linux containers
