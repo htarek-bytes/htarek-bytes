@@ -1,7 +1,7 @@
 <h1 align="center">Tarik Hireche</h1>
 
 <p align="center">
-  Bilingual Software Developer | Java, C#, SQL, Cloud & Infrastructure<br>
+  Bilingual Software Developer | Java, SQL, Cloud & Infrastructure<br>
 </p>
 
 <p align="center">
@@ -48,7 +48,7 @@ panicked on ARM, and why aligning an offset instead of an absolute address cause
 
 ## Skills
 
-- **Languages:**Java, C#, Python, SQL
+- **Languages:**Java, Python, SQL
 - **Systems:** Linux, POSIX/syscalls, concurrency & synchronisation, memory management
 - - **Tooling:** Git, CMake, Docker & Compose, GitHub Actions, PostgreSQL, Prometheus, Grafana, Neovim
 
